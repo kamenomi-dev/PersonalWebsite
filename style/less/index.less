@@ -8,6 +8,7 @@
 
 @COLOR_BODY_BACKGROUND: #303030;
 @COLOR_HEADER_NAV: #080808A1;
+@COLOR_FOOTER: @COLOR_BODY_BACKGROUND;
 
 * {
     color: white;
@@ -152,12 +153,27 @@ body {
         // I don't know why Firefox and its Android version don't support backdrop-filter so far.
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
+
+        border: unset;
     }
 
     background-image: url(https://bing.img.run/1366x768.php);
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
+}
+
+.main-group.footer {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3em;
+    background-color: @COLOR_FOOTER;
+
+    font-size: 1em;
+    line-height: 3em;
+    text-align: center;
 }
 
 .interface-nonselect {

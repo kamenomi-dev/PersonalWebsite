@@ -31,6 +31,17 @@ window.CLIENT_MOBILE = (/ipad|iphone os|midp|rv:1.2.3.4|ucweb|windows ce|windows
         }
     });
 
+    // Load subpage.
+    var content = <HTMLIFrameElement>document.getElementById("bodyContent");
+    const args = new URLSearchParams(location.search);
+
+    if (args.has("article")){
+        content.src = `./pages/main/subpage-blogframe.html`;
+    }else {
+        const part = args.get("current_page") || "main";
+        content.src = `./pages/main/subpage-${part}.html`;
+    }
+
     // debug information.
 
     if (WEBSITE_TYPE === WebsiteType.Release) {
