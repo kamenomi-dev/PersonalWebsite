@@ -1,0 +1,132 @@
+/**
+ *   此 Less 样式文件为网页结构大体工作
+ */
+* {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+a {
+  align-self: center;
+  text-decoration: none;
+}
+a:hover {
+  color: #ffddb1;
+}
+body {
+  background-color: #303030;
+}
+#website-debugger-information {
+  pointer-events: none;
+  z-index: 100000;
+  position: fixed;
+  top: 5cap;
+  left: 5cap;
+  margin: 0;
+  background-color: #000000d0;
+}
+.main-group,
+body {
+  margin: 0;
+}
+.main-group.header {
+  z-index: 100;
+  position: relative;
+  position: fixed;
+  width: 100vw;
+  height: 48px;
+  background-color: #080808A1;
+}
+@media (max-width: 768px) {
+  .main-group.header {
+    display: none;
+  }
+}
+.main-group.header > * {
+  background-color: transparent;
+}
+.main-group.header.logo {
+  position: relative;
+  display: inline;
+  top: 0;
+  left: 0;
+  width: 48px;
+  float: left;
+  line-height: 0;
+  margin-right: 1.5em;
+}
+.main-group.header.nav-list {
+  display: inline;
+  top: 0;
+  height: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.main-group.header.nav-list > li {
+  display: inline-block;
+  height: inherit;
+  width: 130px;
+  list-style: none;
+}
+.main-group.header.nav-list > li > * {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  line-height: 48px;
+  text-align: center;
+}
+.main-group.content {
+  z-index: 2;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url(https://bing.img.run/1366x768.php);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.main-group.content > * {
+  background: none;
+}
+.main-group.content.title {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+  min-height: unset;
+  line-height: 70vh;
+  text-align: center;
+  font-weight: 530;
+  font-size: 3em;
+}
+.main-group.content.title::after {
+  content: attr(data-subTitle);
+  position: absolute;
+  top: 2.1em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.6em;
+}
+.main-group.content.body {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #080808A1;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.interface-image-logo {
+  content: url(/favicon-180x180.ico);
+  max-width: 48px;
+  max-height: 48px;
+}
