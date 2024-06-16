@@ -1,44 +1,132 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title i18n="#[head-title]">Kamen's Personal Website</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            sizes="16x16"
+            href="/favicon-16x16.ico"
+        >
+        <link
+            rel="icon"
+            type="image/x-icon"
+            sizes="32x32"
+            href="/favicon-32x32.ico"
+        >
+        <link
+            rel="icon"
+            type="image/x-icon"
+            sizes="48x48"
+            href="/favicon-48x48.ico"
+        >
+        <link
+            rel="icon"
+            type="image/x-icon"
+            sizes="192x192"
+            href="/favicon-192x192.ico"
+        >
+        <link
+            rel="apple-touch-icon"
+            type="image/x-icon"
+            sizes="167x167"
+            href="/favicon-167x167.ico"
+        >
+        <link
+            rel="apple-touch-icon"
+            type="image/x-icon"
+            sizes="180x180"
+            href="/favicon-180x180.ico"
+        >
+        <link rel="stylesheet" href="/style/css/index.css">
+        <script> // Watch dog
+            setTimeout(() => {
+                if (!window.WATCH_DOG)
+                    confirm(
+                        "Error, Watch dog finds some errors in main script."
+                        + "Please send some logs about the error to developer! "
+                );
+            }, 3000); // Three secend later will check the status that whether the script is loaded.
+        </script>
+        <script src="/scripts/js/index.js" type="module"></script>
+    </head>
+    <body>
+        <!-- Present debugger information -->
+        <label id="website-debugger-information"></label>
+        <!-- For Mobile -->
+        <header class="mobile main-group header" detect-device="mobile">
+            <div class="main-group header title" i18n="#[head-title]"></div>
+            <a
+                class="main-group header logo"
+                title="Home"
+                href="/#返回首页力~(≧∇≦)ﾉ"
+                target="_self"
+                rel="noopener noreferrer"
+            >
+                <img class="interface-image-logo" alt="logo">
+            </a>
+        </header>
+        <div class="mobile main-group left-tab" detect-device="mobile"></div>
+        <!-- For Desktop Pad -->
+        <header class="main-group header" detect-device>
+            <a
+                class="main-group header logo"
+                title="Home"
+                href="/#返回首页力~(≧∇≦)ﾉ"
+                target="_self"
+                rel="noopener noreferrer"
+            >
+                <img class="interface-image-logo" alt="logo">
+            </a>
+            <ul class="main-group header nav-list">
+                <li>
+                    <a
+                        title="Home"
+                        href="/#返回首页力~(≧∇≦)ﾉ"
+                        target="_self"
+                        rel="noreferrer"
+                        i18n="#[header-nav-home]"
+                    ></a>
+                </li>
+                <li>
+                    <a
+                        title="Article"
+                        href="/index.html?current_page=article"
+                        target="_self"
+                        rel="noreferrer"
+                        i18n="#[header-nav-article]"
+                    ></a>
+                </li>
+                <li>
+                    <a
+                        title="LinlExhchange"
+                        href="/index.html?current_page=link_exchange"
+                        target="_self"
+                        rel="noreferrer"
+                        i18n="#[header-nav-link-exchange]"
+                    ></a>
+                </li>
+                <li>
+                    <a
+                        title="About"
+                        href="/index.html?current_page=about"
+                        target="_self"
+                        rel="noreferrer"
+                        i18n="#[header-nav-about]"
+                    ></a>
+                </li>
+            </ul>
+        </header>
+        <div class="main-group content">
+            <div class="main-group content title interface-nonselect" i18n="#[content-title]" data-subTitle="子标题测试"></div>
+            <div class="main-group content body">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title i18n="#[head-title]">Kamen's Personal Website</title>
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="/favicon-16x16.ico">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon-32x32.ico">
-    <link rel="icon" type="image/x-icon" sizes="48x48" href="/favicon-48x48.ico">
-    <link rel="icon" type="image/x-icon" sizes="192x192" href="/favicon-192x192.ico">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="167x167" href="/favicon-167x167.ico">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="180x180" href="/favicon-180x180.ico">
-    <link rel="stylesheet" href="/style/css/index.css">
-    <script src="/scripts/js/index.js" type="module"></script>
-</head>
-
-<body>
-    <label id="website-debugger-information"></label>
-
-    <header class="main-group header">
-        <a class="main-group header logo" title="Home" href="/#返回首页力~(≧∇≦)ﾉ" target="_self"
-            rel="noopener noreferrer"><img class="interface-image-logo" alt="logo"></a>
-        <ul class="main-group header nav-list">
-            <li><a title="Home" href="/#返回首页力~(≧∇≦)ﾉ" target="_self" rel="noreferrer" i18n="#[header-nav-home]"></a>
-            </li>
-            <li><a title="Article" href="/index.html?current_page=article" target="_self" rel="noreferrer"
-                    i18n="#[header-nav-article]"></a></li>
-            <li><a title="LinlExhchange" href="/index.html?current_page=link_exchange" target="_self" rel="noreferrer"
-                    i18n="#[header-nav-link-exchange]"></a></li>
-            <li><a title="About" href="/index.html?current_page=about" target="_self" rel="noreferrer"
-                    i18n="#[header-nav-about]"></a></li>
-        </ul>
-    </header>
-
-    <div class="main-group content">
-        <div class="main-group content title" i18n="#[content-title]" data-subTitle="子标题测试"></div>
-        <div class="main-group content body">
-
+                网页待开发中~
+            </div>
         </div>
-    </div>
-</body>
 
+        <footer> Copyright (c) 2024, All reserved </footer>
+    </body>
 </html>

@@ -4,7 +4,7 @@
 
 @HEADER_NAV_HEIGHT: 48px;
 
-@CONTENT_TITLE_FONT_SIZE: 3em;
+@CONTENT_TITLE_FONT_SIZE: 1.8em;
 
 @COLOR_BODY_BACKGROUND: #303030;
 @COLOR_HEADER_NAV: #080808A1;
@@ -33,8 +33,8 @@ body {
     z-index: 100000;
 
     position: fixed;
-    top: 5cap;
-    left: 5cap;
+    top: 1cm;
+    left: .5cm;
     margin: 0;
 
     background-color: #000000d0;
@@ -47,15 +47,17 @@ body {
 
 .main-group.header {
     z-index: 100;
-    position: relative;
     position: fixed;
-    width: 100vw;
+
+
+    &.mobile {
+        text-align: center;
+        line-height: @HEADER_NAV_HEIGHT;
+    }
+
+    width: 100%;
     height: @HEADER_NAV_HEIGHT;
     background-color: @COLOR_HEADER_NAV;
-
-    @media (max-width: 768px) {
-        display: none;
-    }
 
     >* {
         // No inherit
@@ -74,13 +76,14 @@ body {
         margin-right: 1.5em;
     }
 
-    &.nav-list {
+    >ul.nav-list {
         display: inline;
-        top: 0;
         height: inherit;
 
         overflow: hidden;
         white-space: nowrap;
+
+        list-style: none;
 
         >li {
             display: inline-block;
@@ -88,7 +91,6 @@ body {
             height: inherit;
             width: 130px;
 
-            list-style: none;
 
             >* {
                 position: absolute;
@@ -115,11 +117,6 @@ body {
     }
 
     &.title {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-
         position: relative;
         top: 0;
         left: 0;
@@ -135,12 +132,12 @@ body {
         &::after {
             content: attr(data-subTitle);
             position: absolute;
-            
-            top: @CONTENT_TITLE_FONT_SIZE * 0.7;
+
+            top: @CONTENT_TITLE_FONT_SIZE;
             left: 0;
             width: 100%;
             text-align: center;
-            font-size: @CONTENT_TITLE_FONT_SIZE * .2;
+            font-size: @CONTENT_TITLE_FONT_SIZE*.5;
         }
     }
 
@@ -161,6 +158,13 @@ body {
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
+}
+
+.interface-nonselect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .interface-image-logo {

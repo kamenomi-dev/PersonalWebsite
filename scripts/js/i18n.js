@@ -56,6 +56,9 @@ export class I18n {
                 }
                 return presentText;
             });
+            if (node.innerHTML != originText) {
+                textBlock = [node.innerHTML, ...textBlock];
+            }
             if (Object.hasOwn(node, "innerText")) {
                 node.innerText = textBlock.join("");
             }

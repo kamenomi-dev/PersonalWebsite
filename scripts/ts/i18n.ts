@@ -46,7 +46,7 @@ export class I18n {
         this.i18nLogger.Debug(`XMLHttpRequest() Success`);
 
         allNode.forEach(node => {
-            const originText = node.getAttribute("i18n");
+            const originText = node!.getAttribute("i18n");
             if (originText == null) {
                 return;
             }
@@ -69,6 +69,10 @@ export class I18n {
 
                 return presentText;
             });
+
+            if (node.innerHTML != originText) {
+                textBlock = [node.innerHTML, ...textBlock];
+            }
 
             if (Object.hasOwn(node, "innerText")) {
                 node.innerText = textBlock.join("");
